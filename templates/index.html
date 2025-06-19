@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clasificador de Insectos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         function clasificarInsecto(event) {
             event.preventDefault();
@@ -30,15 +33,21 @@
         }
     </script>
 </head>
-<body>
-    <h1>Clasificador de Insectos</h1>
-    <form id="formulario" onsubmit="clasificarInsecto(event)">
-        <label for="abdomen">Longitud del Abdomen:</label><br>
-        <input type="text" id="abdomen" name="abdomen"><br>
-        <label for="antena">Longitud de las Antenas:</label><br>
-        <input type="text" id="antena" name="antena"><br><br>
-        <input type="submit" value="Enviar">
-    </form>
-    <p id="resultado"></p>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Clasificador de Insectos</h1>
+        <form id="formulario" onsubmit="clasificarInsecto(event)" class="space-y-4">
+            <div>
+                <label for="abdomen" class="block text-sm font-medium text-gray-700">Longitud del Abdomen:</label>
+                <input type="text" id="abdomen" name="abdomen" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div>
+                <label for="antena" class="block text-sm font-medium text-gray-700">Longitud de las Antenas:</label>
+                <input type="text" id="antena" name="antena" class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200">Enviar</button>
+        </form>
+        <p id="resultado" class="mt-4 text-center text-gray-600"></p>
+    </div>
 </body>
 </html>
